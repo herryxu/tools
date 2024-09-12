@@ -14,7 +14,6 @@ import (
 	"go.uber.org/zap"
 	"reflect"
 	"strings"
-	"zhima_chat_ai/internal/app/zhima_chat_ai/define"
 )
 
 var (
@@ -36,9 +35,9 @@ func switchTrans(lang string) ut.Translator {
 	validate := binding.Validator.Engine().(*validator.Validate)
 	// check trans
 	switch lang {
-	case "en":
+	case "en-US":
 		err = en_translations.RegisterDefaultTranslations(validate, trans)
-	case define.LangZhCn:
+	case "zh-CN":
 		err = zh_translations.RegisterDefaultTranslations(validate, trans)
 	default:
 		err = zh_translations.RegisterDefaultTranslations(validate, trans)

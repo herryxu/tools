@@ -27,7 +27,7 @@ func SafeRunParams(fun interface{}, args ...interface{}) (_ error) {
 			v.Call(pps)
 		default:
 			err := fmt.Errorf("func is not func,type=%v", v.Kind().String())
-			logn.Errorf("error=%v", err)
+			fmt.Errorf("error=%v", err)
 		}
 	}()
 	return
